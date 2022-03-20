@@ -18,11 +18,6 @@ function UserSearch() {
         }
     }
 
-    const handleClear = (e) => {
-        e.preventDefault()
-        clearUser()
-    }
-
     return (
         <div className="grid grid-cols-1 xs:gird-cols-2 lg:grid-col-2 md:grid-cols-2 mb-8 gap-8">
             <div>
@@ -43,7 +38,7 @@ function UserSearch() {
                 <div>
                     <button
                         className="btn btn-ghost btn-lg"
-                        onClick={handleClear}
+                        onClick={clearUser}
                     >Clear</button>
                 </div>
             }
