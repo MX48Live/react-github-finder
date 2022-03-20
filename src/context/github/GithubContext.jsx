@@ -18,17 +18,16 @@ export const GithubProvider = ({ children }) => {
         const params = new URLSearchParams({
             q: text
         })
-        const response = await fetch(`${GITHUB_URL}/search/users?q=${text}`, {
+        const response = await fetch(`${GITHUB_URL}/search/users?${params}`, {
             headers: {
                 Authorization: `token ${GITHUB_TOKEN}`
             }
         })
         const {items} = await response.json()
-        console.log(items)
-        // dispatch({
-        //     type: 'GET_USERS',
-        //     payload: items
-        // })
+        dispatch({
+            type: 'GET_USERS',
+            payload: items
+        })
     }
 
     const clearUser = () => dispatch({type: 'CLEAR_USERS'})
